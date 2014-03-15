@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="styles/reset.css" />
+		<link rel="stylesheet" type="text/css" href="styles/base.css" />
+		<link rel="stylesheet" type="text/css" href="styles/toolbar_options.css" />
+		<link rel="stylesheet" type="text/css" href="../../lib/toolbar.css" />
+		<link rel="stylesheet" type="text/css" href="../../themes/theme_02.css" />
+		<style type="text/css">
+			.toolbarContainer { visibility: hidden; }
+			#content { margin-top: 1000px; }
+		</style>
+		<script type="text/javascript" src="scripts/lib/require.js" data-main="scripts/index.js"></script>
+		<title>js-toolbar demo</title>
+	</head>
+	<body>
+		<h1>Toolbar configurator</h1>
+		<div class="toolbarOptionsWidget">
+			<div class="configuration"></div>
+			<div>
+				<h2>Configure toolbar</h2>
+				<div class="toolbarOptions">
+					<div>
+						<input id="isRounded" type="checkbox"/>
+						<label for="isRounded">Rounded end buttons</label>
+					</div>
+					<div>
+						<input id="isSkippable" type="checkbox"/>
+						<label for="isSkippable">Include 'Skip navigation' feature</label>
+					</div>
+					<div>
+						<span>Dock menus: </span>
+						<select id="isAboveMenus">
+							<option value="true">beneath the toolbar</option>
+							<option value="false">above the toolbar</option>
+						</select>
+					</div>
+				</div>
+				<h2>Configure menu effects</h2>
+				<h3>Show effect</h3>
+				<div class="showMenuFxOptions">
+					<span>Duration [ms]:</span>
+					<input class="duration numeric" type="text" size="5"></input>
+					<span>Type:</span>
+					<select class="effects">
+						<option value="none">None</option>
+						<option value="blind">Blind</option>
+						<option value="bounce">Bounce</option>
+						<option value="clip">Clip</option>
+						<option value="drop">Drop</option>
+						<option value="explode">Explode</option>
+						<option value="fade">Fade</option>
+						<option value="fold">Fold</option>
+						<option value="puff">Puff</option>
+						<option value="pulsate">Pulsate</option>
+						<option value="scale">Scale</option>
+						<option value="shake">Shake</option>
+						<option value="slide">Slide</option>
+					</select>
+					<span>Easing:</span>
+					<select class="easing">
+						<option value="swing">Swing</option>
+						<option value="linear">Linear</option>
+						<option value="easeInQuad">EaseInQuad</option>
+						<option value="easeOutQuad">EaseOutQuad</option>
+						<option value="easeInOutQuad">EaseInOutQuad</option>
+						<option value="easeInCubic">EaseInCubic</option>
+						<option value="easeOutCubic">EaseOutCubic</option>
+						<option value="easeInOutCubic">EaseInOutCubic</option>
+						<option value="easeInQuart">EaseInQuart</option>
+						<option value="easeOutQuart">EaseOutQuart</option>
+						<option value="easeInOutQuart">EaseInOutQuart</option>
+						<option value="easeInQuint">EaseInQuint</option>
+						<option value="easeOutQuint">EaseOutQuint</option>
+						<option value="easeInOutQuint">EaseInOutQuint</option>
+						<option value="easeInExpo">EaseInExpo</option>
+						<option value="easeOutExpo">EaseOutExpo</option>
+						<option value="easeInOutExpo">EaseInOutExpo</option>
+						<option value="easeInSine">EaseInSine</option>
+						<option value="easeOutSine">EaseOutSine</option>
+						<option value="easeInOutSine">EaseInOutSine</option>
+						<option value="easeInCirc">EaseInCirc</option>
+						<option value="easeOutCirc">EaseOutCirc</option>
+						<option value="easeInOutCirc">EaseInOutCirc</option>
+						<option value="easeInElastic">EaseInElastic</option>
+						<option value="easeOutElastic">EaseOutElastic</option>
+						<option value="easeInOutElastic">EaseInOutElastic</option>
+						<option value="easeInBack">EaseInBack</option>
+						<option value="easeOutBack">EaseOutBack</option>
+						<option value="easeInOutBack">EaseInOutBack</option>
+						<option value="easeInBounce">EaseInBounce</option>
+						<option value="easeOutBounce">EaseOutBounce</option>
+						<option value="easeInOutBounce">EaseInOutBounce</option>
+					</select>
+					<div class="specifics">
+						<div class="fx-blind">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="down">down</option>
+									<option value="up">up</option>
+									<option value="left">left</option>
+									<option value="right">right</option>
+									<option value="vertical">vertical</option>
+									<option value="horizontal">horizontal</option>
+								</select>
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/blind-effect/" target="_blank">jQueryUI API: blind effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-bounce">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="down">down</option>
+									<option value="up">up</option>
+									<option value="left">left</option>
+									<option value="right">right</option>
+								</select>
+							</div>
+							<div class="flow">
+								<span>Distance: </span>
+								<input name="distance" class="numeric" type="text" value="20" size="5" />
+							</div>
+							<div class="flow">
+								<span>Times: </span>
+								<input name="times" class="numeric" type="text" value="5" size="5" />
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/bounce-effect/" target="_blank">jQueryUI API: bounce effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-clip">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="horizontal">horizontal</option>
+									<option value="vertical">vertical</option>
+								</select>
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/clip-effect/" target="_blank">jQueryUI API: clip effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-drop">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="down">down</option>
+									<option value="up">up</option>
+									<option value="left">left</option>
+									<option value="right">right</option>
+								</select>
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/drop-effect/" target="_blank">jQueryUI API: drop effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-explode">
+							<div class="flow">
+								<span>Pieces: </span>
+								<input name="pieces" class="numeric" type="text" value="9" size="5" />
+							</div>
+							<a class="api note" href="http://api.jqueryui.com/explode-effect/" target="_blank">jQueryUI API: explode effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-fade">
+							<span>No additional options.</span>
+							<a class="api note" href="http://api.jqueryui.com/fade-effect/" target="_blank">jQueryUI API: fade effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-fold">
+							<div class="flow">
+								<span>Size of the "folded" element: </span>
+								<input name="size" class="numeric" type="text" value="15" size="5" />
+							</div>
+							<br/>
+							<div class="flow">
+								<input name="horizFirst" type="checkbox" />
+								<label for="horizFirst"> Vertical before horizontal scaling</label>
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/fold-effect/" target="_blank">jQueryUI API: fold effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-puff">
+							<div class="flow">
+								<span>Percent: </span>
+								<input name="percent" class="numeric" type="text" value="150" size="5" />
+							</div>
+							<a class="api note" href="http://api.jqueryui.com/puff-effect/" target="_blank">jQueryUI API: puff effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-pulsate">
+							<div class="flow">
+								<span>Times: </span>
+								<input name="times" class="numeric" type="text" value="5" size="3" />
+							</div>
+							<a class="api note" href="http://api.jqueryui.com/pulsate-effect/" target="_blank">jQueryUI API: pulsate effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-scale"><span>Origin</span><span class="note"> x, y: </span>
+							<div class="flow">
+								<select name="origin-x">
+									<option value="center">center</option>
+									<option value="left">left</option>
+									<option value="right">right</option>
+								</select><select name="origin-y">
+									<option value="middle">middle</option>
+									<option value="top">top</option>
+									<option value="bottom">bottom</option>
+								</select>
+							</div>
+							<div class="flow">
+								<span>Scale: </span>
+								<select name="scale">
+									<option value="both">both</option>
+									<option value="box">box</option>
+									<option value="content">content</option>
+								</select>
+							</div>
+							<br/>
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="horizontal">horizontal</option>
+									<option value="vertical">vertical</option>
+									<option value="both">both</option>
+								</select>
+							</div>
+							<div class="flow">
+								<span>Percent: </span>
+								<input name="percent" class="numeric" type="text" value="100" size="5" />
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/scale-effect/" target="_blank">jQueryUI API: scale effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-shake">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="left">left</option>
+									<option value="right">right</option>
+									<option value="down">down</option>
+									<option value="up">up</option>
+								</select>
+							</div>
+							<div class="flow">
+								<span>Distance: </span>
+								<input name="distance" class="numeric" type="text" value="20" size="5" />
+							</div>
+							<div class="flow">
+								<span>Times: </span>
+								<input name="times" class="numeric" type="text" value="3" size="5" />
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/shake-effect/" target="_blank">jQueryUI API: shake effect</a>
+							<div class="cf"></div>
+						</div>
+						<div class="fx-slide">
+							<div class="flow">
+								<span>Direction: </span>
+								<select name="direction">
+									<option value="left">left</option>
+									<option value="right">right</option>
+									<option value="down">down</option>
+									<option value="up">up</option>
+								</select>
+							</div>
+							<br/>
+							<div class="flow">
+								<span>Distance: </span>
+								<input name="distance" class="numeric" type="text" size="5" />
+								<span class="note">Defaults to element's outer heigth or width</span>
+							</div>
+							<br/>
+							<a class="api note" href="http://api.jqueryui.com/slide-effect/" target="_blank">jQueryUI API: slide effect</a>
+							<div class="cf"></div>
+						</div>
+					</div>
+				</div>
+				<h3>Hide effect</h3>
+				<div class="hideMenuFxOptions">
+					<span>Duration [ms]:</span>
+					<input class="duration numeric" type="text" size="5"></input>
+					<span>Type:</span>
+					<select class="effects"></select>
+					<span>Easing:</span>
+					<select class="easing"></select>
+					<div class="specifics"></div>
+				</div>
+				<button class="button big icon approve">Apply changes</button>
+				<a class="fxSpecificOptions" href="#">More options</a>
+			</div>
+		</div>
+	<div class="toolbarContainer">
+		<ul>
+			<li><!-- Menu -->
+				<a href="#">View</a>
+				<ul>
+					<li><a href="#" id="widgetView">Hide configuration widget</a></li>
+					<li><a href="#" id="showConf">Show configuration</a></li>
+				</ul>
+			</li>
+			<li class="tb-end-group"><a href="#">Search items</a></li>
+			<li><a href="#">Add item</a></li>
+			<li><a href="#">Remove items</a></li>
+			<li><!-- Menu -->
+				<!--<a class="disabled" tabindex="-1" href="#">Menu 1</a>-->
+				<a href="#">Menu 1</a>
+				<ul>
+					<li><a class="wakeup" href="#">Delete items</a></li>
+					<li><a href="#">Menu Item 1-2</a></li>
+				</ul>
+			</li>
+			<li><!-- Menu -->
+				<a href="#">Menu 2</a>
+				<ul class="dock-right">
+					<li><a href="#">Menu Item 2-1</a></li>
+					<li><a href="#">Menu Item 2-2</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div id="content">Content.</div>
+	</div>
+</body>
+</html>

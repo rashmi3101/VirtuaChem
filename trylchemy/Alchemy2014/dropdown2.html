@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script language="JavaScript">
+<!--
+
+function input()
+{
+	//document.getElementById("topmenu").innerHTML="INVENTORIES";
+	
+	document.getElementById("content").innerHTML='<font color==blue>CHEMICAL REACTIONS</font><br><hr>';
+	//document.getElementById("myimg").setAttribute("src","reactor1.jpg");
+	//document.getElementById("myimg").src="reactor1.jpg";
+	alert("Hi");
+	
+	document.write("hello")
+	document.write("<hr>")
+	document.write("<tr><td> 5 </td></tr>")
+	//var x=document.reactor.react[document.reactor.react.selectedIndex].value
+	var x=document.getElementById("reactors");
+	//var y=x.react[x.selectedIndex].value;
+	//alert(y);
+	
+	//var x=document.getElementById('reactors').value;
+	//var b=document.getElementById("reactors").value;
+	//alert(document.reactor.name.value);
+	 //	{		alert("Invalid");	}
+	document.write("<hr>")
+	var a=2
+	if(a==1)
+	{
+		document.write('<img src="reactant1.jpg">')
+	}
+	if(a==2)
+	{
+		document.write('<img src="reactant2.jpg">')
+	}
+	<!--document.write("<button>Buy</button>")
+	<!--document.write("<img src="./reactant1.jpg" style="height:50px;width:50;">")
+	
+
+}
+//-->
+</script>
+</head>
+<body>
+
+<div id="container" style="width:1300px;height:600px;">
+<!--    
+
+
+===================================================================================================================================top
+
+-->
+<div id="topmenu" style="background-color:yellow;height:75px;width:1240px;float:top;text-align:center;padding:30px;display:table;">
+<table style="margin:5px;align:center">
+        <tr>
+            <td>
+                <output type="text" style="background-color:red;width:10px;value='10'"/>
+            </td>
+            <td>
+                <input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+			
+				<br><br><br>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+				<input type="text" style="width:40px"/>
+			
+			</td>
+           
+        </tr>
+    </table>
+</div>
+
+  <!--    
+
+
+===================================================================================================================================left
+
+-->
+<div id="menu" style="background-color:#FFD700;height:450px;width:150px;float:left;">
+<b>&nbsp&nbsp&nbsp&nbspMenu</b>
+<br>
+<br>
+
+
+<form name='form1'>
+
+<select name='LEVEL' style="width: 80%">
+<option>Level </option>
+<option>Level 1</option>
+<option>Level 2</option>
+</select><br />
+</form>
+
+<br>
+<br>
+<form name='reactor'>
+
+<select id='reactors' name='react' style="width: 90%">
+<option>Choose Reactor.. </option>
+<option value="1" style="background-color:red">Reactor 1</option>
+<option value="2" style="background-color:lightgreen">Reactor 2</option>
+<option value="3" style="background-color:grey">Reactor 3</option>
+</select>
+</form>
+<button onclick="input()">Buy</button>
+<br />
+
+<br>
+<br>
+<form>
+<select onChange="input()"style="width: 90%">
+<option>Choose Reactant.. </option>
+<option value="1" style="background-color:red">Reactant 1</option>
+<option value="1" style="background-color:yellow">Reactant 2</option>
+<option value="1" style="background-color:violet">Reactant 3</option>
+</select><br />
+</form>
+<button onclick="myFunction()">Buy</button>
+</div>
+<!--    
+
+
+===================================================================================================================================centr
+
+-->
+
+<div id="content" style="background-color:#EEEEEE;height:400px;width:1000px;float:left;">
+<!-- 
+<img id="myimg" src=" " width="400" height="250">
+-->
+<canvas id="myCanvas" width="1000" height="400" style="z-index:3 border:1px solid #d3d3d3;">
+
+</canvas>
+
+<!--    =======================================================newsflsh====================================================-->
+
+<div id="newsmenu" style="background-color:green;height:45px;width:1000px;text-align:center;">
+
+</div>
+
+
+<script>
+
+var c=document.getElementById("myCanvas");
+
+<!--c.innerHTML='<img src="./reactor1.jpg">'
+var ctx=c.getContext("2d");
+//------------------------------------------------------------------------------------market items
+<!--document.write('<img src="reactant1.jpg">')
+<!--ctx.fillRect(0,0,1000,400);
+
+</script>
+
+
+
+
+
+<div id="myCanvas" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+
+
+</div>
+
+<script>
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<!--    
+
+
+===================================================================================================================================right
+
+-->
+<div id="rightmenu" style="background-color:#FFD700;height:450px;width:150px;float:right;">
+<b>&nbsp&nbsp&nbsp&nbspMenu</b>
+<br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button>
+
+<br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button><br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button>
+</div>
+
+
+  <!--    
+
+
+===================================================================================================================================footer
+
+-->
+<div id="footer" style="background-color:red;clear:both;text-align:center;">
+ALCHEMY</div>
+</div>
+ 
+</body>
+</html>

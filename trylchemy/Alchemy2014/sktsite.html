@@ -1,0 +1,267 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title> </title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Fogli di stile JQuery -->
+	<link rel="stylesheet" href="./GUI/css/custom-theme/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./GUI/css/jquery.tooltip.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./GUI/jpicker-1.0.13/css/jPicker-1.0.13.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./GUI/gritter/css/jquery.gritter.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./GUI/css/superfish.css" type="text/css" media="screen" />
+	
+	<!-- Fogli di stile SFL -->
+	<link rel="stylesheet" href="./GUI/css/Main.css" type="text/css" media="screen" />
+	
+	
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="./GUI/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="./GUI/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="./GUI/jquery.tooltip.min.js"></script>
+	<script type="text/javascript" src="./GUI/jpicker-1.0.13/jpicker-1.0.13.js"></script>
+	<script type="text/javascript" src="./GUI/gritter/js/jquery.gritter.min.js"></script>
+	<script type="text/javascript" src="./GUI/ajaxupload.js"></script>
+	
+	<!-- Compatibilità con IE -->
+	<script type="text/javascript" src="./GUI/excanvas.compiled.js"></script>
+
+	<!-- GUI -->
+	<script type="text/javascript" src="./GUI/ListPage.js"></script>
+	<script type="text/javascript" src="./GUI/ListWidget.js"></script>
+	<script type="text/javascript" src="./GUI/ListLayouts.js"></script>
+	<script type="text/javascript" src="./GUI/initGUI.js"></script>
+	<script type="text/javascript" src="./GUI/superfish.js"></script>
+		
+	<!-- Data -->
+	<script type="text/javascript" src="./Data/IO.js"></script>
+
+	<!-- Core -->
+	<script type="text/javascript" src="./Core/Message.js"></script>
+	<script type="text/javascript" src="./Core/Creation.js"></script>
+	<script type="text/javascript" src="./Core/Selection.js"></script>
+	<script type="text/javascript" src="./Core/History.js"></script>
+	<script type="text/javascript" src="./Core/Zoom.js"></script>
+	<script type="text/javascript" src="./Core/Clone.js"></script>
+	<script type="text/javascript" src="./Core/Utils.js"></script>
+	<script type="text/javascript" src="./Core/CSS.js"></script>
+	<script type="text/javascript" src="./Core/Point.js"></script>
+	<script type="text/javascript" src="./Core/Controller.js"></script>
+	
+	<!-- Pagine -->
+	<script type="text/javascript" src="./Pages/BasePage.js"></script>
+	<script type="text/javascript" src="./Pages/Page.js"></script>
+	<script type="text/javascript" src="./Pages/HeadOnly.js"></script>
+	<script type="text/javascript" src="./Pages/HeadNavRight.js"></script>
+	<script type="text/javascript" src="./Pages/HeadNavLeft.js"></script>
+	<script type="text/javascript" src="./Pages/ThreeColPage.js"></script>
+	<script type="text/javascript" src="./Pages/TwoColPage.js"></script>
+	<script type="text/javascript" src="./Pages/HeadFooter.js"></script>
+	<script type="text/javascript" src="./Pages/HeadFooterNavLeft.js"></script>
+	<script type="text/javascript" src="./Pages/HeadFooterNavRight.js"></script>
+	
+	<!-- Base -->
+	<script type="text/javascript" src="./Widgets/BaseShape.js"></script>
+	
+	<!--  Layouts -->
+	<script type="text/javascript" src="./Layouts/Layout.js"></script>
+	<script type="text/javascript" src="./Layouts/FormStandard.js"></script>
+	<!-- <script type="text/javascript" src="./Layouts/TableLayout.js"></script> -->
+	
+	<!-- Widgets -->
+	<script type="text/javascript" src="./Widgets/Placeholder.js"></script>
+	<script type="text/javascript" src="./Widgets/TextLabel.js"></script>
+	<script type="text/javascript" src="./Widgets/TextInput.js"></script>
+	<script type="text/javascript" src="./Widgets/TextBox.js"></script>
+	<script type="text/javascript" src="./Widgets/GMaps.js"></script>
+	<script type="text/javascript" src="./Widgets/CheckBox.js"></script>
+	<script type="text/javascript" src="./Widgets/ComboBox.js"></script>
+	<script type="text/javascript" src="./Widgets/Link.js"></script>
+	<script type="text/javascript" src="./Widgets/RadioButton.js"></script>
+	<script type="text/javascript" src="./Widgets/Button.js"></script>
+	<script type="text/javascript" src="./Widgets/ImageWidget.js"></script>
+	<script type="text/javascript" src="./Widgets/Multimedia.js"></script>
+	<script type="text/javascript" src="./Widgets/Iframe.js"></script>
+	<script type="text/javascript" src="./Widgets/Menu.js"></script>
+	<script type="text/javascript" src="./Widgets/Separator.js"></script>
+	<script type="text/javascript" src="./Widgets/TextArea.js"></script>
+	
+</head>
+
+<body>
+
+	<div id="loadingScreen">
+		Caricamento in corso...<br />
+		<img src="./Images/ajax-loader.gif" />
+		<div class="bkLoadingScreen"></div>
+	</div>
+
+	<div id="topBar">
+		<!-- <img id="scrittaLogo" src="./Images/scritta_logo.png" alt="Logo StormForge Labs" /> -->
+		<img id="scrittaLogo" src="./Images/logo_sys_lungo.png" alt="Logo SyS" />
+		<div id="coords" style="float: right;"></div>
+		<div id="menuBar">
+			<span></span>
+			<ul class="sf-menu">
+				<li>Progetto
+				<ul>
+					<li><a class="progettonuovo">Nuovo Progetto</a></li>
+					<li><a class="addpaginanuova" title="Nuovo">Nuova Pagina</a></li>
+					<li><a class="carica" title="Carica">Carica Progetto</a></li>
+					<li><a class="salva" title="Salva">Salva</a></li>
+					<li><a class="salvanome" title="Salva">Salva Con Nome</a></li>
+					<li><a class="esporta" title="Esporta">Esporta</a></li>
+					<li><a class="elimina" title="EliminaPagina">Elimina Pagina</a></li>
+					<li><a class="eliminaprogetto">Elimina Progetto</a></li>
+				</ul>
+				</li>
+				<li>Modifica
+				<ul>
+					<li><a class="copia">Copia</a></li>
+					<li><a class="incolla">Incolla</a></li>
+					<li><a class="cestino">Elimina Oggetto</a></li>
+					<li><a class="indietro">Annulla</a></li>
+					<li><a class="avanti">Ripeti</a></li>
+				</ul>
+				</li>
+				<li>Visualizza
+				<ul>
+					<li><a class="zoomin">Zoom in</a></li>
+					<li><a class="zoompage">Zoom 100%</a></li>
+					<li><a class="zoomout">Zoom out</a></li>
+					<li><a class="anteprima">Anteprima</a></li>
+				</ul>
+				</li>
+				<li>?
+				<ul>
+					<li><a id="manuSFL">Manuale Utente</a></li>
+					<li><a id="creditsSFL">Informazioni</a></li>
+				</ul>
+				</li>
+			</ul>
+			<div id="projName">Progetto: senzaNome</div>
+		</div>
+		<div id="toolBar">
+			<ul>
+				<li><a id="nuovo" class="progettonuovo" title="Nuovo"></a></li>
+				<li><a id="carica" class="carica" title="Carica"></a></li>
+				<li><a id="salva" class="salva" title="Salva"></a></li>
+				<li><a id="space"></a></li>
+				<li><a id="copia" class="copia" title="Copia"></a></li>
+				<li><a id="incolla" class="incolla" title="Incolla"></a></li>
+				<li><a id="indietro" class="indietro" title="Annulla"></a></li>
+				<li><a id="avanti" class="avanti" title="Ripeti"></a></li>
+				<li><a id="space"></a></li>
+				<li><a id="zoomout" class="zoomout" title="Zoom Out"></a></li>
+				<li><a id="zoompage" class="zoompage" title="Zoom 100%"></a></li>
+				<li><a id="zoomin" class="zoomin" title="Zoom In"></a></li>
+				<li><a id="anteprima" class="anteprima" title="Anteprima"></a></li>
+				<li><a id="space"></a></li>
+				<li><a id="widgetview" title="Vista Widget" class="pressed"></a></li>
+				<li><a id="layoutview" title="Vista Layout"></a></li>
+				<li><a id="space"></a></li>
+				<li><a id="griglia" title="Mostra bordi"></a></li>
+				<li><a id="cestino" class="cestino" title="Cestino"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="sideBar">
+		<ul>
+			<li><a href="#widgetBar" class="tabs">Widgets</a></li>
+			<li><a href="#layoutBar" class="tabs">Layouts</a></li>
+			<li><a href="#pageBar" class="tabs">Pagine</a></li>
+	 	</ul>
+		<div id="widgetBar">
+			<!-- <div class="titleBar">Widgets</div>-->
+		</div>
+		<div id="layoutBar">
+		</div>
+		<div id="pageBar">
+			<div class="titleBar"><li id="creanuovapagina">Nuova Pagina...<img id="imgAddPag" class="addpaginanuova" src="Images/add.png"></li></div>
+			<ul id="pageList">
+			</ul>
+		</div>
+	</div>
+	
+	<div id="theCanvasContainer">
+		<canvas id="theCanvas"></canvas>
+	</div>
+	
+	<div id="ghostBarSter">
+     <ul>
+		<li><a href="#propTab" class="tabs">Propriet&agrave</a></li>
+		<li><a href="#cssTab" class="tabs">Stile</a></li>
+		<!--<li><a href="#effettiTab" class="tabs">Effetti</a></li>-->
+	 </ul>
+	 <div id="propTab"> 	
+	 	<div id="propTabConteiner">
+	 	</div>	
+ 	 </div>
+	 <div id="cssTab"  style="display:none;">
+	 	<div id="cssTabConteiner">
+	 	<div class='labelClass'>Classe: 
+			<select id="classSelect" name='cssClass' class='txtBox cssVal'>
+				<option value='nuova'>Crea nuova...</option>
+				<optgroup label="----Classi esistenti----">
+					<option value='noClass'>noClass</option>
+				</optgroup>
+			</select>
+		</div>	
+		<!--<div class='labelClass'>Larghezza: <input type='text' name='width' class='txtBox cssVal'></div>-->
+		<!--<div class='labelClass'>Altezza: <input type='text' name='height' class='txtBox cssVal'></div>-->
+		<div class='labelClass'>Nome Font: 
+			<select name='font_family' class='txtBox cssVal'>
+				<option value='Arial'>Arial</option>
+				<option value='Georgia'>Georgia</option>
+				<option value='Lucida'>Lucida</option>
+				<option value='Verdana'>Verdana</option>
+				<option value='Sans-Serif'>Sans-Serif</option>
+				<option value='Times New Roman'>Times New Roman</option>
+			</select>
+		</div>
+		<div class='labelClass'>Grandezza Font: <input type='text' name='font_size' class='txtBox cssVal'></div>
+		<div class='labelClass'>Grassetto: <input type='checkbox' name='font_weight' class='txtBox cssVal' value='bold'></div>
+		<div class='labelClass'>Corsivo: <input type='checkbox' name='font_style' class='txtBox cssVal' value='italic'></div>
+		<div class='labelClass'>Sottolineato: <input type='checkbox' name='text_decoration' class='txtBox cssVal' value='underline'></div>
+		<div class='labelClassColor'>Colore Font: <input type='text' class='inputColor cssVal' name='color' readonly='true'></div>
+		<div class='labelClassColor'>Colore Sfondo: <input type='text' class='inputColor cssVal' name='background_color' readonly='true'></div>
+		<div class='labelClass'>
+			Img: <input type='text' name='background_image' class='txtBoxFile cssVal' readonly='true' id='cssBkImg'>
+		</div>
+		<div class='labelClass' id="allineamento">Testo allineato: 
+			<select name='text_align' class='txtBox cssVal'>
+				<option value='left'>Sinistra</option>
+				<option value='right'>Destra</option>
+				<option value='center'>Centrale</option>
+			</select>
+		</div>
+		<div class='labelClass' id="allineamento_verticale">All. Verticale: 
+			<select name='vertical_align' class='txtBox cssVal'>
+				<option value='top'>Alto</option>
+				<!--- <option value='middle'>Centrale</option> -->
+				<option value='bottom'>Basso</option>
+			</select>
+		</div>
+		<div class='labelClass cssVal' name='marginDiv'><span id='marginDiv'></span><input type="submit" id="buttonMargin" name="margin" value="Modifica" class="txtBox2"></div>
+		<div class='labelClass cssVal' name='paddingDiv'><span id='paddingDiv'></span><input type="submit" id="buttonPadding" name="margin" value="Modifica" class="txtBox2"></div>
+		<div class='labelClass'>Bordi: <input type='checkbox' name='border' class='txtBox cssVal' value='border'></div>
+		<div class='labelClassColor'>Colore Bordi: <input type='text' class='inputColor cssVal' name='border_color' readonly='true'></div>
+		<!-- <div id="apply" class="labelClass"><input class="txtBox" type="submit" value="Applica"></div> -->
+		</div>
+	 </div>
+	 <!--<div id="effettiTab">
+		<p></p>
+	 </div>-->
+	</div>
+
+<!--<div id="bottomBar"></div>-->
+	<!--Immagine nascosta-->
+	<!-- <img id="imgDelete" src="./Images/delete.png" /> -->
+</body>
+</html>

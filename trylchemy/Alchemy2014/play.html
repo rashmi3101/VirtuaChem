@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ocanvas example</title>
+    <script src="oCanvas.js"></script>
+    <style>canvas {
+    display: block;
+    border:1px solid #222
+}</style>
+</head>
+<body>
+    
+    <canvas id="canvas" width="1300" height="600"></canvas>
+
+	
+<script>
+ 
+var canvas = oCanvas.create({
+	canvas: "#canvas",
+	fps: 60
+});
+
+var button = canvas.display.rectangle({
+	x: canvas.width / 2,
+	y: canvas.width / 5,
+	origin: { x: "center", y: "top" },
+	width: 300,
+	height: 100,
+	fill: "linear-gradient(315deg, #079, #013)",
+	shadow: "0 0 20px rgba(0,0,0, 0.8)"
+});
+var button1 = canvas.display.rectangle({
+	x: canvas.width / 2,
+	y: canvas.width / 5,
+	origin: { x: "center", y: "top" },
+	width: 300,
+	height: 100,
+	fill: "linear-gradient(315deg, #079, #013)",
+	shadow: "0 0 20px rgba(0,0,0, 0.8)"
+});
+
+canvas.addChild(button1);
+var arc = canvas.display.arc({
+	x: canvas.width / 3.5,
+	y: button.y + 150,
+	radius: 60,
+	start: 40,
+	end: 260,
+	fill: "#079",
+	pieSection: true
+});
+
+
+
+canvas.bind("click tap", function () {
+	canvas.addChild(arc);
+});
+
+
+</script>
+</body>
+</html>
+	

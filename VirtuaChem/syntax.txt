@@ -1,0 +1,108 @@
+==============
+update prices of reactant and reactor from excel file
+drag n drop on "canvas"
+sell
+timer
+total worth
+gross value of pdcts
+delay in reactor availability  //levels
+pics of reactors n reactants
+resize top table
+decide how much the reactor can convert
+how fast should the reactor change the price
+
+
+
+===================================================================================================================================
+<div id
+onmouseover(this)
+onmouse(out)
+onload(this)
+onunload(this)      cookies
+onchange
+=======================================
+function myFunction()
+{
+alert("Hello World!");
+}=
+
+===============================================uses of elementby id
+document.getElementById(id).attribute=new value
+=========================================
+
+var txt=document.getElementById("intro").innerHTML;
+document.write(txt);
+
+
+function myFunction()
+{
+document.getElementById("demo").innerHTML="Hello Dolly";
+document.getElementById("myDIV").innerHTML="How are you?";
+}
+
+
+
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+document.write("Oops! The document disappeared!");
+}
+</script>
+
+
+==============================================  array
+var cars=new Array();
+
+==========================
+var x=8;  var str="Äsdsad"
+
+
+
+====================================================objects
+var person={
+firstname : "John",
+lastname  : "Doe",
+id        :  5566
+};
+
+name=person.lastname;
+
+var name = new String;
+
+
+===========================================submit  form============================
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="frm1" action="form_action.asp">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>Click the "Try it" button to return the value of each element in the form.</p>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var x = document.getElementById("frm1");
+var txt = "";
+for (var i=0;i<x.length;i++)
+  {
+  txt = txt + x.elements[i].value + "<br>";
+  }
+document.getElementById("demo").innerHTML=txt;
+}
+</script>
+
+</body>
+</html>

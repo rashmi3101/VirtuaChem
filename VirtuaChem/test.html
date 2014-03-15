@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+	<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link href="./toolbar/jquery.toolbars.css" rel="stylesheet" />
+<link href="./toolbar/bootstrap.icons.css" rel="stylesheet" />
+ 
+  <link rel="stylesheet" type="text/css" media="all" href="css/jquery.toolbars.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.toolbar.min.js"></script>
+<span id="editmenu"><img src="images/edit-profile-icon.png" alt="Edit"></span>
+         <div id="user-options" >
+			    <a href="#"><em class="icon-user"></em></a>
+			    <a href="#"><em class="icon-edit"></em></a>
+			    <a href="#"><em class="icon-comment"></em></a>
+			    <a href="#"><em class="icon-picture"></em></a>
+			    <a href="#"><em class="icon-facetime-video"></em></a>
+			    <a href="#"><em class="icon-cog"></em></a>
+		    </div>
+       
+<canvas id="myCanvas" width="1260" height="660" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="./toolbar/jquery.toolbar.js"></script>
+
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+setTimeout(function level1(){
+var imgOb1 = new Image();
+
+      imgOb1.onload = function() {
+        ctx.drawImage(imgOb1, 0, 0 , 1260 , 660);
+      };
+      imgOb1.src = './bg/level1.jpg';},0);
+setTimeout(function level2(){
+var imgOb2 = new Image();
+
+      imgOb2.onload = function() {
+        ctx.drawImage(imgOb2, 0, 0 , 1260 , 660);
+      };
+      imgOb2.src = './bg/level2.jpg';},4000);
+setTimeout(function level2(){
+var imgOb3 = new Image();
+
+      imgOb3.onload = function() {
+        ctx.drawImage(imgOb3, 0, 0 , 1260 , 660);
+      };
+      imgOb3.src = './bg/level3.jpg';},8000);
+setTimeout(function level4(){
+var imgOb4 = new Image();
+
+      imgOb4.onload = function() {
+        ctx.drawImage(imgOb4, 0, 0 , 1260 , 660);
+      };
+      imgOb4.src = './bg/level4.jpg';},12000);
+setTimeout(function level5(){
+var imgOb5 = new Image();
+
+      imgOb5.onload = function() {
+        ctx.drawImage(imgOb5, 0, 0 , 1260 , 660);
+      };
+      imgOb5.src = './bg/level5.jpg';},16000);
+
+
+var mouseX = 0;
+var mouseY = 0;
+window.addEventListener('mousemove', mouseMoved, true);
+function mouseMoved(e) {
+ mouseX = e.pageX;
+ mouseY = e.pageY;
+}
+
+window.addEventListener('click', clicked, true);
+function clicked(e) {
+
+}
+
+
+var ismousedown = 0;
+window.onmousedown = function(e) {
+ ismousedown = 1;
+}
+window.onmouseup = function(e) {
+ ismousedown = 0;
+}
+</script>
+</head>
+<body>
+
+      
+
+<script type="text/javascript">
+$(function(){
+  $('#editmenu').toolbar({
+	  content: '#user-options',
+	  position: 'bottom',
+	  hideOnClick: true
+  });
+  $('#editmenu').on('toolbarItemClick', function(event){
+    // when the user clicks an icon we call this function
+    console.dir(event);
+    $(this).trigger('click');
+  });
+});
+</script></body>
+</html>
+
+

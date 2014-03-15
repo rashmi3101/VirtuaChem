@@ -1,0 +1,142 @@
+/* js-toolbar v0.0.0 | https://github.com/mpecherstorfer/js-toolbar/blob/master/LICENSE */
+
+/* Toolbar items */
+.tb-item {
+	position: relative;
+    display: inline-block;
+    overflow: visible;
+    white-space: nowrap;
+    cursor: default;
+    margin: 0;
+    outline: none;
+    border-radius: 0;
+    text-decoration: none; /* avoid underlined link items */
+    text-align: center;
+    
+    /* default theme */
+    border: 1px solid #cfcfcf;
+    padding: 5px 10px;
+    color: #444;
+    font: 1em/normal sans-serif;
+    background: #ffffff;
+}
+.tb-item:focus,
+.tb-item:hover,
+.tb-item:active {
+    background: #eeeeee;
+}
+/* Disabled items */
+.tb-item.disabled {
+	opacity: 0.5;
+}
+.tb-item.disabled:focus,
+.tb-item.disabled:hover,
+.tb-item.disabled:active {
+	background: #ffffff;
+}
+/* For items associated with operations better not to be executed by drowsy users */
+.tb-item.wakeup {
+	color: #cc0000;
+}
+.tb-item.wakeup:focus,
+.tb-item.wakeup:hover,
+.tb-item.wakeup:active {
+    color: #fff;
+    background: #cc0000;
+}
+/* Hidden items */
+.tb-item.hidden {
+	display: none;
+}
+
+/* Toolbar */
+.toolbar {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+.toolbar > li {
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+/* Grouped toolbar items */
+.toolbar > li.tb-end-group {
+	margin-right: 5px; /* horizontal space between groups */
+}
+/* Avoid overlapping vertical item borders */
+.toolbar > li:not(:last-child):not(.tb-end-group) > .tb-item {
+	border-right: none;
+}
+/* Slightly rounded corners on the toolbar's left and right end */
+.toolbar > li:first-child > .tb-item {
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+.toolbar > li:last-child > .tb-item {
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+/* Rounded corners on the toolbar's left and right end */
+.toolbar.rounded > li:first-child > .tb-item {
+	border-top-left-radius: 1000px;
+	border-bottom-left-radius: 1000px;
+}
+.toolbar.rounded > li:last-child > .tb-item {
+	border-top-right-radius: 1000px;
+	border-bottom-right-radius: 1000px;
+}
+/* Reset flow for elements following the toolbar */
+.toolbar + * {
+	clear: both;
+}
+
+/* Toolbar menu */
+.toolbar .tb-menu {
+	position: absolute;
+	display: none;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	/* set to item values in order to avoid ugly jQueryUI scaling effects */
+	background-color: #ececec;
+	border-radius: 2px;
+}
+.tb-menu > li > .tb-item {
+	display: block;
+	float: none;
+	text-align: left;
+}
+.tb-menu > li:first-child > .tb-item {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+.tb-menu > li:last-child > .tb-item {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+/* Avoid overlapping horizontal item borders */
+.tb-menu > li:not(:first-child) > .tb-item {
+	border-top: none;
+}
+
+/* Accessibility */
+.tb-skip a,
+.tb-skip a:hover,
+.tb-skip a:visited { 
+	position:absolute; 
+	left:0px; 
+	top:-500px; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
+}
+.tb-skip a:active,
+.tb-skip a:focus { 
+	position:static; 
+	width:auto; 
+	height:auto; 
+}

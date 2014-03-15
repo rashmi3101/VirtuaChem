@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>VirtuaChem GAME</title>
+    <script src="oCanvas.js"></script>
+    <style>canvas {
+    display: block;
+    border:1px solid #222
+}</style>
+</head>
+<body>
+    
+    <canvas id="canvas" width="1300" height="600"></canvas>
+
+	
+<script>
+    var canvas = oCanvas.create({
+	canvas: "#canvas",
+	fps: 60
+});
+
+var bg = canvas.display.image({
+	x: canvas.width / 2,
+	y: canvas.width /100,
+	origin: { x: "center", y: "middle" },
+	width: canvas.width,
+	height: canvas.height,
+	image: "stock-market.jpg"
+});
+canvas.addChild(bg);
+var button1 = canvas.display.rectangle({
+	x: -130  ,
+	y: 20 ,
+	//origin: { x: "center", y: "center" },
+	width: 200,
+	height: 40,
+	fill: "black",
+	stroke: "10px #079",
+	join: "round"
+});
+bg.addChild(button1);
+var buttonText1 = canvas.display.text({
+	x: 100,
+	y: 20,
+	origin: { x: "center", y: "center" },
+	align: "center",
+	font: "bold 25px sans-serif",
+	text: "START GAME",
+	fill: "#fff"
+});
+button1.addChild(buttonText1);
+button1.bind("click tap", function () {
+	window.location.href='./new6.php';
+});
+var button2 = canvas.display.rectangle({
+	x: -100 ,
+	y: 150 ,
+	//origin: { x: "center", y: "center" },
+	width: 100,
+	height: 40,
+	fill: "black",
+	stroke: "10px #079",
+	join: "round"
+});
+bg.addChild(button2);
+button2.bind("click tap", function () {
+	window.location.href = 'Tutorial.pdf';
+});
+var buttonText2 = canvas.display.text({
+	x: 50,
+	y: 20,
+	origin: { x: "center", y: "center" },
+	align: "center",
+	font: "bold 25px sans-serif",
+	text: "Tutorial",
+	fill: "#fff"
+});
+button2.addChild(buttonText2);
+
+var button3 = canvas.display.rectangle({
+	x: canvas.width/600+100 ,
+	y: 150 ,
+	//origin: { x: "center", y: "center" },
+	width: 200,
+	height: 40,
+	fill: "black",
+	stroke: "10px #079",
+	join: "round"
+});
+bg.addChild(button3);
+button3.bind("click tap", function () {
+	window.location.href = 'Dos_and_Donts.pdf';
+});
+var buttonText3 = canvas.display.text({
+	x: 100,
+	y: 20,
+	origin: { x: "center", y: "center" },
+	align: "center",
+	font: "bold 25px sans-serif",
+	text: "DOs & DON'Ts",
+	fill: "#fff"
+});
+button3.addChild(buttonText3);
+
+var button4 = canvas.display.rectangle({
+	x: 400 ,
+	y: 150 ,
+	//origin: { x: "center", y: "center" },
+	width: 100,
+	height: 40,
+	fill: "black",
+	stroke: "10px #079",
+	join: "round"
+});
+bg.addChild(button4);
+button4.bind("click tap", function () {
+	window.location.href='../home.htm';
+});
+var buttonText4 = canvas.display.text({
+	x: 45,
+	y: 20,
+	origin: { x: "center", y: "center" },
+	align: "center",
+	font: "bold 25px sans-serif",
+	text: "EXIT",
+	fill: "#fff"
+});
+button4.addChild(buttonText4);
+</script>
+</body>
+</html>

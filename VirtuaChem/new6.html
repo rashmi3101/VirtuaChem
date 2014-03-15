@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="count.js"></script>
+<script type="text/javascript" src="../sastrend.js"></script>
+ <script src="assets/js/chart.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="ocanvas.min.js"></script>
+<!--    
+
+
+===================================================================================================================================top
+
+-->
+<script>
+function updtinv(int)
+{
+   
+document.getElementById("sstc").innerHTML="2";
+
+}
+</script>
+
+
+
+<div id="container" style="width:1300px;height:600px;">
+<!--    
+
+
+===================================================================================================================================top
+
+-->
+<div id="topmenu" style="height:125px;width:1300px;text-align:center;">
+         <div id="main" style="background-color:yellow;height:125px;width:1150px ;float:left;text-align:center;">
+		 
+		          <div id="sstc">   </div>
+		 
+		 
+		 </div>
+		 <span id="countdown" style="background-color:red ;height:125px;width:150px ;float:right;text-align:center;"></span>
+
+
+		
+
+
+
+
+</div>
+
+  <!--    
+
+
+===================================================================================================================================left
+
+-->
+<div id="menu" style="background-color:#FFD700;height:450px;width:150px;float:left;">
+<b>&nbsp&nbsp&nbsp&nbspMenu</b>
+<br>
+<br>
+<img id="imag"  src="logofinal.png" draggable="true" style=" height:50px;width:50;">
+<input list="qty" name="sstc_qty" size="2">
+<datalist id="qty">
+  <option value="1">
+  <option value="2">
+  <option value="3">
+  <option value="4">
+  <option value="5">
+</datalist>
+<br><br>
+<textarea id="textMy"  readonly >
+<?php
+include("db_connect.php");
+ $data = mysql_query("SELECT * FROM sastrend WHERE timer='21'") 
+ or die(mysql_error()); 
+
+ while ($info = mysql_fetch_array( $data ))
+ echo $info['Price']; 
+?>
+</textarea>
+<script>
+
+
+</script>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+	
+		
+<button onclick="updtinv(document.getElementById("qty").value)" >Buy</button>
+
+<br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Buy</button><br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Buy</button>
+</div>
+<!--    
+
+
+===================================================================================================================================centr
+
+-->
+
+<div id="content" style="background-color:#EEEEEE;height:200px;width:1000px;float:left;">
+
+<canvas id="myCanvas" width="1000" height="400" style="z-index:3 border:1px solid #d3d3d3;">
+</canvas>
+
+<!--    =======================================================newsflsh====================================================-->
+
+<div id="newsmenu" style="height:45px;width:1000px;text-align:center;">
+<ul class="newsticker">
+    <li>Etiam imperdiet volutpat libero eu tristique.</li>
+    <li>Curabitur porttitor ante eget hendrerit adipiscing.</li>
+    <li>Praesent ornare nisl lorem, ut condimentum lectus gravida ut.</li>
+    <li>Nunc ultrices tortor eu massa placerat posuere.</li>
+<li>Etiam imperdiet volutpat libero eu tristique.</li>
+    <li>Curabitur porttitor ante eget hendrerit adipiscing.</li>
+    <li>Praesent ornare nisl lorem, ut condimentum lectus gravida ut.</li>
+    <li>Nunc ultrices tortor eu massa placerat posuere.</li>
+<li>Etiam imperdiet volutpat libero eu tristique.</li>
+    <li>Curabitur porttitor ante eget hendrerit adipiscing.</li>
+    <li>Praesent ornare nisl lorem, ut condimentum lectus gravida ut.</li>
+    <li>Nunc ultrices tortor eu massa placerat posuere.</li>
+<li>Etiam imperdiet volutpat libero eu tristique.</li>
+    <li>Curabitur porttitor ante eget hendrerit adipiscing.</li>
+    <li>Praesent ornare nisl lorem, ut condimentum lectus gravida ut.</li>
+    <li>Nunc ultrices tortor eu massa placerat posuere.</li>
+</ul>
+    <script src="jquery.newsTicker.js"></script>
+<script type="text/javascript">
+  /* $('.newsticker').newsTicker({
+    row_height: 48,
+    max_rows: 2,
+    speed: 600,
+    direction: 'up',
+    duration: 1000,
+    autostart: 1,
+    pauseOnHover: 0
+});*/ $('.newsticker').newsTicker({
+    
+row_height: 20,
+    max_rows: 1,
+    duration: 1000,
+	direction: 'up',
+    duration: 1000,
+    autostart: 1,
+    pauseOnHover: 0
+});
+</script>
+
+
+</div>
+<!--    =======================================================end_newsflsh====================================================-->
+
+<script>
+
+
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+//------------------------------------------------------------------------------------market items
+
+ctx.fillRect(0,0,1000,400);
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+<div id="myCanvas" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+
+
+</div>
+
+<script>
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<!--    
+
+
+===================================================================================================================================right
+
+-->
+<div id="rightmenu" style="background-color:#FFD700;height:450px;width:150px;float:right;">
+<b>&nbsp&nbsp&nbsp&nbspMenu</b>
+<br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button>
+
+<br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button><br>
+<br>
+<img id="imag"  src="logofinal.png" style=" height:50px;width:50;">
+
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<output name="amount" value="10">0</output>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="myFunction()">Sell</button>
+</div>
+
+
+  <!--    
+
+
+===================================================================================================================================footer
+
+-->
+<div id="footer" style="background-color:red;clear:both;text-align:center;">
+
+ALCHEMY</div>
+</div>
+ 
+</body>
+</html>

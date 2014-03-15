@@ -1,0 +1,103 @@
+/* Page */
+body {
+	margin: 20px 30px 20px 30px;
+	background-color: #ffffff;
+	/* Font size of 14px in browsers with default size of 16px */
+	font: normal normal normal 87.5% sans-serif;
+}
+
+/* Headings */
+h1 {
+	margin: 35px 0 0 0;
+	font: normal normal normal 180% sans-serif;
+}
+h2 {
+	margin: 25px 0 0 0;
+	font: normal normal normal 140% sans-serif;
+}
+h3 {
+	margin: 15px 0 0 0;
+	font: normal normal normal 120% sans-serif;
+}
+h1 + :not(h2) {
+	margin-top: 8px;
+}
+h2 + :not(h3) {
+	margin-top: 8px;
+}
+body > h1 {
+	margin-top: 0;
+}
+
+.note {
+	font: normal normal normal 85% sans-serif;
+}
+input.numeric {
+	text-align: right;
+}
+.flow {
+	display: inline-block;
+	margin: 0 0 0 1.5ex;
+	white-space: nowrap;
+}
+.flow:first-child,
+br + .flow {
+	margin-left: 0;
+}
+
+/* Toolbar options widget */
+div.toolbarOptionsWidget {
+	text-align: center;
+}
+div.toolbarOptionsWidget > div:not(:first-child) {
+	display: inline-block;
+	margin: 0;
+	border: 1px solid #dedede;
+	padding: 15px 25px 15px 25px;
+	background-color: #efefef;
+	text-align: left;
+}
+div.toolbarOptionsWidget > div.configuration {
+	display: none;
+	margin: 0 0 25px 0;
+	border: 1px dotted black;
+	padding: 5px;
+	text-align: center;
+}
+div.toolbarOptionsWidget > div > h2:first-child {
+	margin-top: 0;
+}
+div.toolbarOptionsWidget > div > div.toolbarOptions > div {
+	margin-top: 4px;
+}
+div.toolbarOptionsWidget > div > div.showMenuFxOptions > div.specifics,
+div.toolbarOptionsWidget > div > div.hideMenuFxOptions > div.specifics {
+	display: none;
+}
+div.toolbarOptionsWidget > div > div.showMenuFxOptions > div.specifics > div,
+div.toolbarOptionsWidget > div > div.hideMenuFxOptions > div.specifics > div {
+	display: none;
+	margin: 5px 2px 3px 15px;
+	border: 1px solid #dedede;
+	padding: 6px 10px 6px 10px;
+	background-color: #e6e6e6;
+}
+div.toolbarOptionsWidget > div > div.showMenuFxOptions > div.specifics a.api,
+div.toolbarOptionsWidget > div > div.hideMenuFxOptions > div.specifics a.api {
+	margin-top: 3px;
+	float: right;
+}
+div.toolbarOptionsWidget > div > button.button {
+	margin-top: 20px;
+}
+div.toolbarOptionsWidget > div > a.fxSpecificOptions {
+	float: right;
+	margin-top: 20px;
+	font-size: 120%;
+}
+
+/* Toolbar */
+div.toolbarContainer {
+	margin-top: 50px;
+	text-align: center;
+}
